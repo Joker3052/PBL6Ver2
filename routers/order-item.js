@@ -24,7 +24,7 @@ router.get(`/`, async (req, res) => {
                 select:'-image',
                 populate: {
                     path: 'user',
-                    select: '-passwordHash -image -imgStore ',  
+                    select: '-passwordHash -image -imgStore -photoProof ',  
                    }
             })
             .populate({

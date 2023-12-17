@@ -16,7 +16,7 @@ const storage = multer.memoryStorage(); // Sử dụng memory storage để khô
 const uploadOptions = multer({ storage: storage });
 router.get(`/`, async (req, res) => {
   try {
-    const userList = await User.find().select('-passwordHash -image -imgStore');
+    const userList = await User.find().select('-passwordHash -image -imgStore -photoProof');
 
     if (!userList) {
       return res.status(500).json({ success: false, error: 'Error fetching user list.' });
